@@ -13,7 +13,7 @@ def fix_bing_references(subreddit, num):
     comments_replied_to = get_comments_array()
 
     print("comedy test\n")
-    for submission in subreddit.new(limit=num):
+    for submission in subreddit.hot(limit=num):
         if submission.id not in posts_replied_to:
             if re.search("bing", submission.selftext, re.IGNORECASE):
                 response = "> bing\n\n"
@@ -27,7 +27,7 @@ def fix_bing_references(subreddit, num):
         print(submission.score)
         print("---------------------------------------\n")
 
-        for top_level_comment in submission.comments:
+        for top_level_comment in submission.comments.replace_more(0, 0):
             if submission.id not in comments_replied_to:
                 if re.search("bing", top_level_comment.body, re.IGNORECASE):
                     response = "> bing\n\n"

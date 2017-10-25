@@ -13,4 +13,4 @@ reddit = praw.Reddit(user_agent='GoogleFixBot',
 
 subreddit = reddit.subreddit('all')
 
-fix_bing_references(subreddit, 1)
+fix_bing_references(subreddit, 100)
