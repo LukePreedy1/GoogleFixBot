@@ -11,6 +11,6 @@ reddit = praw.Reddit(user_agent='GoogleFixBot',
                      username='FuckBingBot',
                      password='Yourface1234')
 
-subreddit = reddit.subreddit('moviebottestingarena')
+subreddit = reddit.subreddit('all')
 
 fix_bing_references(subreddit, 1)
